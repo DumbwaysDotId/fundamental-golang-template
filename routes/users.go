@@ -16,5 +16,5 @@ func UserRoutes(r *mux.Router) {
 	r.HandleFunc("/user/{id}", h.GetUser).Methods("GET")
 	r.HandleFunc("/user", h.CreateUser).Methods("POST")
 	r.HandleFunc("/user/{id}", h.UpdateUser).Methods("PATCH")
-	r.HandleFunc("/user/{id}", h.DeleteUser).Methods("DELETE")
+	// Create "/user/{id}" route with handler DeleteUser and method DELETE here ...
 }

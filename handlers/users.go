@@ -14,7 +14,6 @@ import (
 	"github.com/gorilla/mux"
 )
 
-
 type handler struct {
 	UserRepository repositories.UserRepository
 }
@@ -143,31 +142,7 @@ func (h *handler) UpdateUser(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(response)
 }
 
-func (h *handler) DeleteUser(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
-
-	id, _ := strconv.Atoi(mux.Vars(r)["id"])
-
-	user, err := h.UserRepository.GetUser(id)
-	if err != nil {
-		w.WriteHeader(http.StatusBadRequest)
-		response := dto.ErrorResult{Code: http.StatusBadRequest, Message: err.Error()}	
-		json.NewEncoder(w).Encode(response)
-		return
-	}
-
-	data, err := h.UserRepository.DeleteUser(user,id)
-	if err != nil {
-		w.WriteHeader(http.StatusInternalServerError)
-		response := dto.ErrorResult{Code: http.StatusInternalServerError, Message: err.Error()}	
-		json.NewEncoder(w).Encode(response)
-		return
-	}
-
-	w.WriteHeader(http.StatusOK)
-	response := dto.SuccessResult{Code: http.StatusOK, Data: convertResponse(data)}
-	json.NewEncoder(w).Encode(response)
-}
+// Create DeleteUser method here ... 
 
 func convertResponse(u models.User) usersdto.UserResponse {
 	return usersdto.UserResponse{
