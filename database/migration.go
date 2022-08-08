@@ -1,18 +1,5 @@
 package database
 
-import (
-	"dumbmerch/models"
-	"dumbmerch/pkg/mysql"
-	"fmt"
-)
+// Import "dumbmerch/models", "dumbmerch/pkg/mysql", "fmt" here ...
 
-func RunMigration() {
-	err := mysql.DB.AutoMigrate(&models.User{})
-
-	if err != nil {
-		fmt.Println(err)
-		panic("Migration Failed")
-	}
-
-	fmt.Println("Migration Success")
-}
+// Create RunMigration function here ...
