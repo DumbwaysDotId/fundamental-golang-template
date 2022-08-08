@@ -1,5 +1,5 @@
 package main
 
-// import fmt, net/http, github.com/gorilla/mux
+// import fmt, net/http, github.com/gorilla/mux here ...
 
-// main function to show "hello world"
+// Create main function to show "hello world" here ...
