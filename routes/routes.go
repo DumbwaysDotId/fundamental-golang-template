@@ -1,9 +1,5 @@
 package routes
 
-import (
-	"github.com/gorilla/mux"
-)
+// Import gorilla/mux package here ...
 
-func RouteInit(r *mux.Router) {
-	TodoRoutes(r)
-}
+// Create RouteInit function and Call TodoRoutes function here ...
